@@ -1,0 +1,53 @@
+// Override default variables before the import
+//$body-bg: rgb(255, 255, 255);
+// Your variable overrides
+//$body-color: #111;
+
+
+
+// Import Bootstrap and its default variables
+//@import '~bootstrap/scss/bootstrap.scss';
+
+@import '~admin-lte/build/scss/AdminLTE.scss';
+@import '~react-redux-toastr/src/styles/index';
+
+// Control sidebar slide over content state
+.control-sidebar-slide-open {
+    .control-sidebar {
+      display: block;
+      right: 0;
+      &,
+      &::before {
+       
+        @include transition(right $transition-speed $transition-fn, display $transition-speed $transition-fn);
+      }
+    }
+  
+    &.control-sidebar-push,
+    &.control-sidebar-push-slide {
+      .content-wrapper,
+      .main-footer {
+        margin-right: $control-sidebar-width;
+      }
+    }
+  }
+
+  .control-sidebar-slide-close {
+    .control-sidebar {
+      display: block;
+      right: -$control-sidebar-width;
+      &,
+      &::before {
+       
+        @include transition(right $transition-speed $transition-fn, display $transition-speed $transition-fn);
+      }
+    }
+  
+    &.control-sidebar-push,
+    &.control-sidebar-push-slide {
+      .content-wrapper,
+      .main-footer {
+        margin-right: $control-sidebar-width;
+      }
+    }
+  }  

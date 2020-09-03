@@ -1,0 +1,40 @@
+CRITICAL - 2020-08-29 01:54:46 --> Class 'OAuth2\Storage\Pdo' not found
+#0 /home/piya/public_web/ist-uvd-robot-web/app/Libraries/OAuth.php(20): App\Libraries\OAuth->init()
+#1 /home/piya/public_web/ist-uvd-robot-web/app/Controllers/Auth.php(69): App\Libraries\OAuth->__construct()
+#2 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(918): App\Controllers\Auth->cklogin()
+#3 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-29 01:54:49 --> Class 'OAuth2\Storage\Pdo' not found
+#0 /home/piya/public_web/ist-uvd-robot-web/app/Libraries/OAuth.php(20): App\Libraries\OAuth->init()
+#1 /home/piya/public_web/ist-uvd-robot-web/app/Controllers/Auth.php(69): App\Libraries\OAuth->__construct()
+#2 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(918): App\Controllers\Auth->cklogin()
+#3 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-29 01:55:19 --> Class 'OAuth2\Storage\Pdo' not found
+#0 /home/piya/public_web/ist-uvd-robot-web/app/Libraries/OAuth.php(20): App\Libraries\OAuth->init()
+#1 /home/piya/public_web/ist-uvd-robot-web/app/Controllers/Auth.php(69): App\Libraries\OAuth->__construct()
+#2 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(918): App\Controllers\Auth->cklogin()
+#3 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-29 01:57:17 --> Class 'OAuth2\Storage\Pdo' not found
+#0 /home/piya/public_web/ist-uvd-robot-web/app/Libraries/OAuth.php(20): App\Libraries\OAuth->init()
+#1 /home/piya/public_web/ist-uvd-robot-web/app/Controllers/Auth.php(69): App\Libraries\OAuth->__construct()
+#2 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(918): App\Controllers\Auth->cklogin()
+#3 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-29 01:58:42 --> Class 'OAuth2\Storage\Pdo' not found
+#0 /home/piya/public_web/ist-uvd-robot-web/app/Libraries/OAuth.php(20): App\Libraries\OAuth->init()
+#1 /home/piya/public_web/ist-uvd-robot-web/app/Controllers/Auth.php(69): App\Libraries\OAuth->__construct()
+#2 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(918): App\Controllers\Auth->cklogin()
+#3 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}

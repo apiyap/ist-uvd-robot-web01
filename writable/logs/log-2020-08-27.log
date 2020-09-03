@@ -1,0 +1,9 @@
+CRITICAL - 2020-08-27 02:05:24 --> Invalid file: Auth/token_jwt.php
+#0 /home/piya/public_web/ist-uvd-robot-web/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Auth/token_jwt....')
+#1 /home/piya/public_web/ist-uvd-robot-web/system/Common.php(1119): CodeIgniter\View\View->render('Auth/token_jwt', Array, true)
+#2 /home/piya/public_web/ist-uvd-robot-web/app/Controllers/Auth.php(656): view('Auth/token_jwt', Array)
+#3 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(918): App\Controllers\Auth->token_jwt()
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#5 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

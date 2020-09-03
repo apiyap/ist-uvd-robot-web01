@@ -1,0 +1,85 @@
+CRITICAL - 2020-08-15 08:56:16 --> Invalid file: Auth/token_authorization.php
+#0 /home/piya/public_web/ist-uvd-robot01/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Auth/token_auth...')
+#1 /home/piya/public_web/ist-uvd-robot01/system/Common.php(1119): CodeIgniter\View\View->render('Auth/token_auth...', Array, true)
+#2 /home/piya/public_web/ist-uvd-robot01/app/Controllers/Auth.php(526): view('Auth/token_auth...', Array)
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\Auth->token_auth()
+#4 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#5 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-08-15 19:56:06 --> Undefined index: object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:09:03 --> Undefined index: object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:09:03 --> Undefined index: object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:09:28 --> Undefined index: object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:09:28 --> Undefined index: object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:10:48 --> Trying to get property 'user_logedin_session' of non-object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:10:48 --> Trying to get property 'user_logedin_session' of non-object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:11:30 --> Trying to get property 'user_logedin_session' of non-object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:11:30 --> Trying to get property 'user_logedin_session' of non-object
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/User.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/home/piya/publ...', 16, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\User->get_session()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-15 20:18:53 --> Cannot use object of type stdClass as array
+#0 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\Auth->cklogin2()
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-15 23:31:24 --> Undefined index: client_secret
+#0 /home/piya/public_web/ist-uvd-robot01/app/Controllers/Auth.php(251): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/piya/publ...', 251, Array)
+#1 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(918): App\Controllers\Auth->refresh()
+#2 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /home/piya/public_web/ist-uvd-robot01/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/piya/public_web/ist-uvd-robot01/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

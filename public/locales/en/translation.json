@@ -1,0 +1,60 @@
+{
+ 
+  "welcome":{
+    "title" :"Welcome",
+    "login" :"Login",
+    "carousel" :{
+      "page1":{
+        "title":"<b>UVD</b> Robot",
+        "description":"Simple robot description"
+      },
+      "page2":{
+        "title":"Second slide label",
+        "description":"Second slide description"
+      },
+      "page3":{
+        "title":"Third slide label",
+        "description":"Third slide description"
+      }
+    }
+  },
+  "login" :{
+    "title" : "User login",
+    "email" : "Email",
+    "invalid": "Please enter valid email.",
+    "detail" : "Enter your email to retrieve your session",
+    "register" : "Or Register a new membership",
+    "error": "The email entered is invalid"
+  },
+  "checkpass":{
+    "detail" : "Enter your password to retrieve your session",
+    "invalid" : "Please enter valid password.",
+    "login" : "Or sign in as a different user",
+    "error":{
+      "title" : "Error",
+      "description":"The credential invalid"
+    }
+  },
+
+  "viewer2d":{
+    "save_model":{
+      "title":"Save map",
+      "invalidname" : "Please enter valid map name.",
+      "text" : "Map name",
+      "buttons":{
+        "cancel" :"Cancel",
+        "save" : "Save"
+      }
+    },
+    "open_model":{
+      "title":"Open map",
+      "invalidmap" : "Please select a map.",
+      "text" : "Maps select",
+      "buttons":{
+        "cancel" :"Cancel",
+        "open" : "Open"
+      }
+    }
+  }
+
+}

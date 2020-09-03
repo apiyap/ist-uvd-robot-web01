@@ -1,0 +1,20 @@
+CRITICAL - 2020-08-20 01:44:13 --> syntax error, unexpected '$sess_obj' (T_VARIABLE)
+#0 /home/piya/public_web/ist-uvd-robot-web/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/home/piya/publ...')
+#1 /home/piya/public_web/ist-uvd-robot-web/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-20 03:28:04 --> 7 : Failed to connect to 192.168.10.209 port 80: Connection refused
+#0 /home/piya/public_web/ist-uvd-robot-web/system/HTTP/CURLRequest.php(821): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('7', 'Failed to conne...')
+#1 /home/piya/public_web/ist-uvd-robot-web/system/HTTP/CURLRequest.php(449): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /home/piya/public_web/ist-uvd-robot-web/system/HTTP/CURLRequest.php(158): CodeIgniter\HTTP\CURLRequest->send('POST', 'http://192.168....')
+#3 /home/piya/public_web/ist-uvd-robot-web/app/Controllers/Auth.php(130): CodeIgniter\HTTP\CURLRequest->request('POST', 'http://192.168....', Array)
+#4 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(918): App\Controllers\Auth->cklogin2()
+#5 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 /home/piya/public_web/ist-uvd-robot-web/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home/piya/public_web/ist-uvd-robot-web/build/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
