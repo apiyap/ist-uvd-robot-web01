@@ -6,15 +6,12 @@ import {
   compose,
   applyToPoint,
 } from "transformation-matrix";
-import {
-  rosQuaternionToGlobalTheta,
-  low_pass_filter,
-} from "./Utiles";
+import { rosQuaternionToGlobalTheta, low_pass_filter ,drawCross } from "./Utiles";
 
 import { ToolObject } from "./ToolObject";
 import { ToolZoomPan } from "./Tools/ToolZoomPan";
-import { ToolRoute } from  "./Tools/ToolRoute";
-
+import { ToolRoute } from "./Tools/ToolRoute";
+import { ToolCancelGoal } from './Tools/ToolCancelGoal'
 
 export class NavCanvas {
   static min_scale = 0.25;
@@ -29,11 +26,13 @@ export class NavCanvas {
     this.oldTimeStamp = 0.0;
     this.canvasObjects = [];
     this.activeTool = "NONE";
+    this.cursor = null;
 
     this.toolObjects = {
-      'NONE': new ToolObject(this),
-      'ZOOMPAN': new ToolZoomPan(this),
-      'ROUTE' : new ToolRoute(this),
+      NONE: new ToolObject(this),
+      ZOOMPAN: new ToolZoomPan(this),
+      ROUTE: new ToolRoute(this),
+      CANCELGOAL: new ToolCancelGoal(this),
     };
 
     this.autoRobotCenter = true;
@@ -57,29 +56,8 @@ export class NavCanvas {
     this.scale = 1;
     this.scaleStep = 0.25;
 
-    // this.dragInfo = {
-    //   isDragging: false,
-    //   startX: 0,
-    //   startY: 0,
-    //   diffX: 0,
-    //   diffY: 0,
-    //   canvasX: 0,
-    //   canvasY: 0,
-    // };
-
-    // this.touchesInfo = {
-    //   touches: [],
-    //   startDis: 0,
-    //   moveDis: 0,
-    //   startScale: 1,
-    //   isScale: false,
-    //   isPan: false,
-    //   startAngle: 0,
-    //   startRot: 0,
-    //   isRotate: false,
-    //   rot: 0,
-    // };
-
+  
+    this.sendGoalROS = null;
     this.gridObj = null;
 
     // mouse event
@@ -114,11 +92,19 @@ export class NavCanvas {
     );
   }
 
+  _setCursor() {
+    if (this.cursor !== null || this.cursor !== "") {
+      this.canvas.style.cursor = this.cursor;
+    } else this.canvas.style.cursor = "default";
+  }
+
   init() {
     // Loop over all game objects
     for (let i = 0; i < this.canvasObjects.length; i++) {
       if (this.canvasObjects[i].name === "OccupancyGridClient") {
         this.gridObj = this.canvasObjects[i];
+        this.sendGoalROS = ()=>this.gridObj.sendGoalROS();
+
         this.gridObj.onRobotPosition = (e) => {
           //console.log(e);
 
@@ -135,8 +121,35 @@ export class NavCanvas {
     this.gameLoop(0);
   }
 
+  getGoal(){
+    if(this.gridObj!==null)
+    {
+      return this.gridObj.getGoal();
+    }
+    return null;
+  }
+
+  setGoal(v){
+    if(this.gridObj!==null)
+    {
+      this.gridObj.setGoal(v);
+    }
+
+  }
+  setCancelGoal(){
+    if(this.gridObj!==null)
+    {
+      this.gridObj.cancelGoalROS();
+    }
+  }
+
   setActiveTool(v) {
-    if (this.toolObjects[v]) this.activeTool = v;
+    if (this.toolObjects[v]) {
+      this.activeTool = v;
+      this.cursor = this.toolObjects[v].getCursor();
+      //console.log(this.cursor);
+      this._setCursor();
+    }
   }
 
   scaleUp() {
@@ -237,8 +250,11 @@ export class NavCanvas {
     }
   }
 
+
+
   touchStartHandler(e) {
     e.preventDefault();
+
     if (this.toolObjects[this.activeTool]) {
       this.toolObjects[this.activeTool].onTouchStart(e);
     }
@@ -482,10 +498,17 @@ export class NavCanvas {
   update(secondsPassed) {
     // Loop over all game objects
     for (let i = 0; i < this.canvasObjects.length; i++) {
-      this.canvasObjects[i].update(secondsPassed);
+      if (this.canvasObjects[i].enabled)
+        this.canvasObjects[i].update(secondsPassed);
     }
 
     //detectCollisions();
+
+    
+    if (this.toolObjects[this.activeTool]) {
+      this.toolObjects[this.activeTool].update(secondsPassed);
+    }
+
   }
 
   draw() {
@@ -505,14 +528,18 @@ export class NavCanvas {
     let tr = this.context.getTransform();
     //this.context.setTransform(tr) ;
     for (let i = 0; i < this.canvasObjects.length; i++) {
-      this.canvasObjects[i].draw(tr);
+      if (this.canvasObjects[i].visible===true) this.canvasObjects[i].draw(tr);
     }
 
-    // var ct = { x: this.canvas.width / 2, y: this.canvas.height / 2 };
+    this.context.restore();
 
+
+    // var ct = { x: this.canvas.width / 2, y: this.canvas.height / 2 };
     // //from world coordinate
-    // var ctW = applyToPoint(inverse(this.getTransform()), ct);
+    // var ctW = applyToPoint(inverse(this.getTransform()), ct); // drawin world coordinate
     // drawCross(this.context, ctW, 20, "orange");
+
+
     // if (this.gridObj !== null) {
     //   var rW = applyToPoint(
     //     compose(this.gridObj.getTransform()),
@@ -521,7 +548,18 @@ export class NavCanvas {
     //   drawCross(this.context, rW, 20, "orange");
     // }
 
-    //this.context.restore();
+    
+    //World coordinate
+    this.context.save();
+
+    this.context.translate(this.pos.x, this.pos.y);
+    this.context.rotate(this.rot);
+    this.context.scale(this.scale, this.scale);
+
+    if (this.toolObjects[this.activeTool]) {
+      this.toolObjects[this.activeTool].draw();
+    }
+
     this.context.restore();
 
     //for DEBUG coordinate
@@ -550,7 +588,13 @@ export class NavCanvas {
     // drawCross(this.context, ct, 20);
   }
 
+
+
   exit() {
+    for (let i = 0; i < this.toolObjects.length; i++) {
+      this.toolObjects[i].exit();
+    }
+
     for (let i = 0; i < this.canvasObjects.length; i++) {
       this.canvasObjects[i].exit();
     }

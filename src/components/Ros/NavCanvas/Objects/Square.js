@@ -12,6 +12,8 @@ export class Square extends CanvasObject {
       this.x_dir = dx;
       this.y_dir = dy;
       this.name = "Square";
+      this.visible = true;
+      this.enabled = true;
     }
   
     draw(tr) {

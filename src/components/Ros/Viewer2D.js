@@ -98,7 +98,7 @@ export const Viewer2D = forwardRef((props, ref) => {
     if (engineRef.current != null) {
       gridClientRef.current = new OccupancyGridClient(
         engineRef.current,
-        40,
+        0,
         40,
         {
           ros: Ros,
@@ -203,6 +203,14 @@ export const Viewer2D = forwardRef((props, ref) => {
     }
   }
 
+  const setCancelGoal = ()=>{
+    if (engineRef.current !== null) {
+      engineRef.current.setCancelGoal();
+      engineRef.current.setActiveTool('CANCELGOAL');
+      setActiveTool(engineRef.current.activeTool);
+    }
+  };
+
   return (
     <div ref={viewRef} className="container-fluid">
       <div ref={editorRef} className="col-12">
@@ -273,6 +281,15 @@ export const Viewer2D = forwardRef((props, ref) => {
                   autoComplete="off"
                 />{" "}
                 <FontAwesomeIcon icon={["fas", "route"]} />
+              </label>
+              <label className={"btn bg-olive" + (activeTool==='CANCELGOAL'? " active" : '' )} onClick={setCancelGoal}>
+                <input
+                  type="radio"
+                  name="options"
+                  id="option2"
+                  autoComplete="off"
+                />{" "}
+                <FontAwesomeIcon icon={["fas", "times-circle"]} />
               </label>
             </div>
 

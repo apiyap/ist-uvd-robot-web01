@@ -1,11 +1,13 @@
+import { ToolObject } from "../ToolObject";
 
 
-export class ToolObject {
+export class ToolCancelGoal  extends ToolObject  {
     constructor(engine,options) {
-      this.engine = engine;
+      super(engine, options);
+      
       options = options || {};
-      this.name = options.ros || "NONE";
-      this.icon = ["fas", "ban"];
+      this.name = options.ros || "CANCELGOAL";
+      this.icon = ["fas", "times-circle"];
       this.visible = true;
       this.enabled = true;
     }

@@ -31,6 +31,9 @@ export class ToolZoomPan extends ToolObject {
       rot: 0,
     };
   }
+  getCursor(){
+    return 'grabbing';
+  }
 
   onMouseDown(e) {
     this._dragStart({ x: e.clientX, y: e.clientY });
@@ -189,8 +192,10 @@ export class ToolZoomPan extends ToolObject {
     }
   }
   _dragEnd(p) {
+    if (this.dragInfo.isDragging) {
     this.dragInfo.isDragging = false;
-    this.engine.pos.x = this.dragInfo.diffX;
-    this.engine.pos.y = this.dragInfo.diffY;
+    // this.engine.pos.x = this.dragInfo.diffX;
+    // this.engine.pos.y = this.dragInfo.diffY;
+    }
   }
 }
